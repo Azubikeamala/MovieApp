@@ -1,0 +1,33 @@
+﻿
+@model List<Movie>
+
+    @{
+    ViewData["Title"] = "Movie List";
+
+    }
+
+<a asp-action="Create" asp-controller="Movies">Add new movie</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Rating</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Movie movie in Model)
+        {
+            <tr>
+                <td>@movie.Name</td>
+                <td>@movie.Year</td>
+                <td>@movie.Rating</td>
+                <td>
+                    <a href="#">Edit</a>
+                    <a href="#">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
